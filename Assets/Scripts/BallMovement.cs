@@ -3,9 +3,14 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
+    [SerializeField] private float _force;
+
     private Rigidbody _rb;
     private Vector3 _direction;
+    private Vector3 _firstMousePosition;
     private Camera _camera;
+
+    private DirectionEffect _effect;
 
     private void Start()
     {
@@ -21,6 +26,11 @@ public class BallMovement : MonoBehaviour
         transform.position += _rb.velocity * Time.fixedDeltaTime;
     }
 
+    private void OnMouseDown()
+    {
+        _firstMousePosition = GetMousePosition();
+    }
+
     private void OnMouseDrag()
     {
 
@@ -34,7 +44,7 @@ public class BallMovement : MonoBehaviour
 
     private void CalculateDirection()
     {
-        _direction = GetMousePosition() - transform.position;
+        _direction = GetMousePosition() - _firstMousePosition;
         _direction.y = 0;
     }
 
@@ -48,6 +58,6 @@ public class BallMovement : MonoBehaviour
 
     private void MoveBall()
     {
-        _rb.velocity = _direction * 100 * Time.deltaTime;
+        _rb.velocity = _direction * _force;
     }
 }

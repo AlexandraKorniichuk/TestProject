@@ -8,10 +8,11 @@ public class CameraFollowing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 desiredPosition = _ballTransform.position + _offset;
+        Vector3 ballPosition = _ballTransform.position;
+        Vector3 desiredPosition = ballPosition + _offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, _smoothSpeed);
         transform.position = smoothedPosition;
 
-        transform.LookAt(_ballTransform.position);
+        transform.LookAt(ballPosition);
     }
 }
