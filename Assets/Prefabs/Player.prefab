@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6758700957887998713}
   - component: {fileID: 6624914822812472183}
   - component: {fileID: 5522807790830009331}
+  - component: {fileID: 295162268444314490}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -126,6 +127,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 3
+--- !u!114 &295162268444314490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587655746195503394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b96f1f0eb42b20e4fb1c5e3ddb20dc84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collisionEffect: {fileID: 0}
+  _collisionColor: {r: 1, g: 0, b: 0, a: 0}
+  _compressionTime: 0.1
 --- !u!1 &3119988802655454516
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7279078856228220835}
+  - component: {fileID: 1643752880513402556}
   m_Layer: 0
   m_Name: Direction
   m_TagString: Untagged
@@ -289,6 +306,18 @@ Transform:
   m_Father: {fileID: 3119988802655454519}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 354.354, z: 0}
+--- !u!114 &1643752880513402556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7282752742899656144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb0614dafea71d41bd8fe7d89af1099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9012714588029174660
 GameObject:
   m_ObjectHideFlags: 0

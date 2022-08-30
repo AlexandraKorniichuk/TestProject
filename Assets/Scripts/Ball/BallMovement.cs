@@ -1,16 +1,15 @@
-using System;
 using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float _force;
 
-    private Rigidbody _rb;
     private Vector3 _direction;
+    private Rigidbody _rb;
     private Vector3 _firstMousePosition;
     private Camera _camera;
 
-    private DirectionEffect _effect;
+    private DirectionEffect _directionEffect;
 
     private void Start()
     {
@@ -60,4 +59,6 @@ public class BallMovement : MonoBehaviour
     {
         _rb.velocity = _direction * _force;
     }
+
+    public Vector3 GetDirection() => _direction;
 }
