@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6624914822812472183}
   - component: {fileID: 5522807790830009331}
   - component: {fileID: 295162268444314490}
+  - component: {fileID: 6047477448477237345}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -142,6 +143,18 @@ MonoBehaviour:
   _collisionEffect: {fileID: 7089175638153803352, guid: 1fe591d85dcf1014982cbdb61856a32c, type: 3}
   _collisionColor: {r: 1, g: 0, b: 0, a: 0}
   _compressionTime: 0
+--- !u!114 &6047477448477237345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587655746195503394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3297bec5851583408aba9c8023dae9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3119988802655454516
 GameObject:
   m_ObjectHideFlags: 0
