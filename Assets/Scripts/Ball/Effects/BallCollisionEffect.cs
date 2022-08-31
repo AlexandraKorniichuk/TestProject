@@ -21,11 +21,14 @@ public class BallCollisionEffect : MonoBehaviour
         GameObject collisionObject = collision.gameObject;
         if (collisionObject.tag == "Wall")
         {
-            //_collisionEffect.SetActive(true);
+            CreateParticles(collision.GetContact(0).point);
             _renderer.material.color = _collisionColor;
             StartCoroutine(Compression());
         }
     }
+
+    private void CreateParticles(Vector3 position) =>
+        Instantiate(_collisionEffect, position, Quaternion.identity);
 
     private IEnumerator Compression()
     {
