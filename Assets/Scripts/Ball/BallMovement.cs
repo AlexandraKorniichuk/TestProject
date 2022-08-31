@@ -3,13 +3,12 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [SerializeField] private float _force;
+    [SerializeField] private DirectionEffect _directionEffect;
 
     private Vector3 _direction;
     private Rigidbody _rb;
     private Vector3 _firstMousePosition;
     private Camera _camera;
-
-    private DirectionEffect _directionEffect;
 
     private void Start()
     {
@@ -17,7 +16,7 @@ public class BallMovement : MonoBehaviour
         _camera = Camera.main;
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         _rb.velocity += Physics.gravity * Time.fixedDeltaTime;
         float rigidbodyDrag = Mathf.Clamp01(1.0f - (_rb.drag * Time.fixedDeltaTime));
@@ -32,11 +31,13 @@ public class BallMovement : MonoBehaviour
 
     private void OnMouseDrag()
     {
-
+        CalculateDirection();
+        _directionEffect.UpdateDirection(_direction + transform.position);
     }
 
     private void OnMouseUp()
     {
+        _directionEffect.ClearEffects();
         CalculateDirection();
         MoveBall();
     }
