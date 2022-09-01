@@ -7,7 +7,6 @@ public class BallMovement : MonoBehaviour
 
     private Vector3 _direction;
     private Rigidbody _rb;
-    private Vector3 _firstMousePosition;
     private Camera _camera;
 
     private void Start()
@@ -22,11 +21,6 @@ public class BallMovement : MonoBehaviour
         float rigidbodyDrag = Mathf.Clamp01(1.0f - (_rb.drag * Time.fixedDeltaTime));
         _rb.velocity *= rigidbodyDrag;
         transform.position += _rb.velocity * Time.fixedDeltaTime;
-    }
-
-    private void OnMouseDown()
-    {
-        _firstMousePosition = GetMousePosition();
     }
 
     private void OnMouseDrag()
@@ -44,7 +38,7 @@ public class BallMovement : MonoBehaviour
 
     private void CalculateDirection()
     {
-        _direction = GetMousePosition() - _firstMousePosition;
+        _direction = GetMousePosition() - transform.position;
         _direction.y = 0;
     }
 
